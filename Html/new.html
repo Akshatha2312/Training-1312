@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Minimal Landing</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-dark:#212834;
+    --muted:#9aa4ad;
+    --accent:#2f7bff;
+    --panel:#dfe3e8;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:"Open Sans",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+    color:#0f1720;
+    line-height:1.4;
+  }
+
+  /* Header */
+  header{
+    background:var(--bg-dark);
+    color:#fff;
+    padding:28px 6%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .logo{font-family:"Montserrat",sans-serif;font-weight:800}
+  nav a{
+    color:#cbd6df;
+    text-decoration:none;
+    margin-left:22px;
+    font-size:14px;
+  }
+
+  /* Hero */
+  .hero{
+    display:flex;
+    gap:40px;
+    align-items:center;
+    padding:64px 6%;
+    background:var(--bg-dark);
+    color:white;
+  }
+  .hero .left{max-width:520px}
+  .hero h1{
+    margin:0 0 12px 0;
+    font-family:"Montserrat",sans-serif;
+    font-size:46px;
+    line-height:1;
+    letter-spacing:-0.5px;
+  }
+  .hero p.lead{color:var(--muted); margin:0 0 18px;font-size:15px; max-width:420px}
+  .btn{
+    display:inline-block;
+    padding:10px 16px;
+    border-radius:6px;
+    background:var(--accent);
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    box-shadow:0 2px 0 rgba(0,0,0,0.12);
+  }
+  .hero .right{
+    flex:1;
+    display:flex;
+    justify-content:center;
+  }
+  .placeholder{
+    width:380px;
+    height:160px;
+    background:#6e757c;
+    opacity:0.85;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#e7e9ec;
+    font-size:13px;
+  }
+
+  /* Info row */
+  .section{
+    padding:56px 6%;
+    text-align:center;
+    background:white;
+  }
+  .title{font-family:"Montserrat",sans-serif;font-size:26px;margin-bottom:36px;color:#222}
+  .features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:28px;
+    align-items:start;
+    justify-items:center;
+    max-width:900px;
+    margin:0 auto;
+  }
+  .card{
+    width:120px;
+    height:100px;
+    border-radius:10px;
+    border:3px solid var(--accent);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:white;
+  }
+  .card + p{font-size:12px;color:var(--muted);margin-top:10px;max-width:140px}
+
+  /* Quote band */
+  .quote-band{
+    background: #e9ebef;
+    padding:60px 6%;
+    text-align:center;
+    font-style:italic;
+    color:#222;
+  }
+  .quote{
+    max-width:780px;
+    margin:0 auto;
+    font-size:20px;
+    line-height:1.6;
+    font-weight:300;
+  }
+  .quote .who{display:block;margin-top:14px;font-weight:700;font-style:normal;text-align:right}
+
+  /* CTA */
+  .cta-wrap{padding:56px 6%; background:white}
+  .cta{
+    max-width:900px;
+    margin:0 auto;
+    background:linear-gradient(180deg,var(--accent),#1f62e6);
+    color:white;
+    padding:32px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+  }
+  .cta .left{max-width:70%}
+  .cta h3{margin:0 0 8px 0;font-family:"Montserrat",sans-serif}
+  .cta p{margin:0;color:rgba(255,255,255,0.9);font-size:14px}
+  .cta .cta-btn{
+    padding:10px 16px;border-radius:8px;border:1px solid rgba(255,255,255,0.6);
+    background:transparent;color:white;text-decoration:none;font-weight:600;
+  }
+
+  /* Footer */
+  footer{
+    background:var(--bg-dark);
+    color:#c9d2d9;
+    padding:20px 6%;
+    text-align:center;
+    font-size:13px;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width:800px){
+    .hero{flex-direction:column; text-align:center}
+    .hero .right{order:2}
+    .hero .left{order:1}
+    .hero h1{font-size:36px}
+    .placeholder{width:90%}
+    .cta{flex-direction:column;align-items:flex-start}
+    .cta .left{max-width:100%}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Header Logo</div>
+  <nav>
+    <a href="#">header link one</a>
+    <a href="#">header link two</a>
+    <a href="#">header link three</a>
+  </nav>
+</header>
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="left">
+    <h1 id="hero-title">This website is<br>awesome</h1>
+    <p class="lead">This website has some subtext that goes here under the main title. It's a smaller font and the color is lower contrast.</p>
+    <a class="btn" href="#">Sign up</a>
+  </div>
+
+  <div class="right">
+    <div class="placeholder">this is a placeholder for an image</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="title">Some random information.</div>
+
+  <div class="features" role="list">
+    <div>
+      <div class="card" role="listitem"></div>
+      <p>this is some subtext under an illustration or image</p>
+    </div>
+
+    <div>
+      <div class="card" role="listitem"></div>
+      <p>this is some subtext under an illustration or image</p>
+    </div>
+
+    <div>
+      <div class="card" role="listitem"></div>
+      <p>this is some subtext under an illustration or image</p>
+    </div>
+
+    <div>
+      <div class="card" role="listitem"></div>
+      <p>this is some subtext under an illustration or image</p>
+    </div>
+  </div>
+</section>
+
+<section class="quote-band" aria-label="testimonial">
+  <div class="quote">
+    This is an inspiring quote, or a testimonial from a customer. Maybe it's just filling up space, or maybe people will actually read it. Who knows? All I know is that it looks nice.
+    <span class="who">-Thor, God of Thunder</span>
+  </div>
+</section>
+
+<section class="cta-wrap">
+  <div class="cta">
+    <div class="left">
+      <h3>Call to action! It's time!</h3>
+      <p>Sign up for our product by clicking that button right over there!</p>
+    </div>
+    <div>
+      <a class="cta-btn" href="#">Sign up</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Copyright © The Odin Project 2021
+</footer>
+
+</body>
+</html>
